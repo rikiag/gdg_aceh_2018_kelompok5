@@ -1,7 +1,20 @@
+application: gaewithphp
+version: 2
 runtime: php55
 api_version: 1
-threadsafe: true
+threadsafe: false
 
 handlers:
-- url: /.*
+- url: /asset/
+  static_files: asset/index.html
+  upload: asset/index.html
+
+- url: /asset/(.*)
+  static_files: asset/\1
+  upload: asset/(.*)
+
+- url: /
+  script: index.php
+
+- url: /(.+)
   script: index.php
