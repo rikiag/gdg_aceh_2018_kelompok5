@@ -8,6 +8,6 @@
 </head>
 <body>
   <h1>PHP IS AWSOME</h1>
-  <H2>Today is <?= date('y-m-d') ?></H2>
+  <H2>Today is <?= date('l, d F Y') ?></H2>
 </body>
 </html>
