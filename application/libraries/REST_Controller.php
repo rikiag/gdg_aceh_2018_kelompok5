@@ -2,10 +2,13 @@
 
 namespace Restserver\Libraries;
 
+use CI_Controller;
 use Exception;
 use stdClass;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+require APPPATH . 'libraries/Format.php';
 
 /**
  * CodeIgniter Rest Controller
@@ -511,7 +514,7 @@ abstract class REST_Controller extends CI_Controller {
         if ($this->request->format && $this->request->body)
         {
             $this->request->body = Format::factory($this->request->body, $this->request->format)->to_array();
-		    
+
 	    // Assign payload arguments to proper method container
             $this->{'_'.$this->request->method.'_args'} = $this->request->body;
         }
