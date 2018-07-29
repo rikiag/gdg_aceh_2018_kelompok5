@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
 $newurl = str_replace("index.php","", $_SERVER['SCRIPT_NAME']);
 
-if($_SERVER['SERVER_PORT'] == 8080){
+if(isset($_SERVER['SERVER_PORT']) == 8080){
   $config['base_url']    = "$http" . $_SERVER['SERVER_NAME'] . ":8080" . $newurl."";
 }
 else{
