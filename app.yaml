@@ -1,8 +1,6 @@
-application: gaewithphp
-version: 2
 runtime: php55
 api_version: 1
-threadsafe: false
+threadsafe: true
 
 handlers:
 - url: /asset/
