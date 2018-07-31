@@ -53,7 +53,8 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
-$route['favicon.ico'] = 'welcome';
+$route['login'] = 'auth/login';
+$route['register'] = 'auth/register';
 
 /*
 | -------------------------------------------------------------------------
