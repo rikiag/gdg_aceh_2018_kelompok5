@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Klasemen extends MY_Controller {
+class Halte extends MY_Controller {
 
 
 	public function __construct()
@@ -12,8 +12,8 @@ class Klasemen extends MY_Controller {
 
 	public function index()
 	{
-		$this->content       = 'klasemen';
-		$this->data['title'] = 'Klasemen';
+		$this->content       = 'halte';
+		$this->data['title'] = 'Halte';
 
 		$this->data['script'] = 'script';
 		$this->data['css'] = 'css';
