@@ -17,7 +17,40 @@ class RESTHalte extends REST_Controller {
 
     public function index_get()
     {
-        echo"hahaha";
+        // echo"hahaha";
+        $obj_store = new \GDS\Store('Book');
+        $sql = "SELECT * FROM Book ORDER BY author ASC";
+        $arr_posts = $obj_store->query($sql)->fetchAll();
+
+        foreach ($arr_posts as $data ) {
+            $tes[] = array(
+                'title' => $data->title,
+                'author' => $data->author,
+                'isbn' => $data->isbn,
+                'location' => $data->location,
+            );
+        }
+        $this->response($tes, REST_Controller::HTTP_OK);
+        // print_r($tes);
+    }
+
+    public function create_get()
+    {
+        $obj_store = new \GDS\Store('Book');
+
+        // Create a simple Entity object
+        $obj_book = $obj_store->createEntity([
+            'title' => 'Bastian Tito',
+            'author' => 'Wiro Sableng Jilid 2',
+            'isbn' => '0812036387',
+            'location'=>'Jakarta'
+        ]);
+
+        // Insert into the Datastore
+        $obj_store->upsert($obj_book);
+
+        // Show the key
+        echo "Created: ", $obj_book->getKeyId();
     }
 
 }
