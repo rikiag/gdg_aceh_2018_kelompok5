@@ -3,7 +3,7 @@
 <head>
   <?php if($header) echo $header;?>
 </head>
-<body>
+<body class="grey lighten-3">
   <?php
     if($navbar) echo $navbar;
     if($content) echo $content;
